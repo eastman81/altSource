@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>AltSource Bank</title>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+  <!-- Bootswatch -->
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootswatch/4.1.1/lux/bootstrap.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="./index.html">AltSource Bank</a>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Loans</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cards</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Online & Mobile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+      </ul>
+      
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="./index.html">
+            <button type="button" class="btn btn-info">Log Out</button>
+          </a>
+        </li>
+      </ul>
+
+    </div>
+  </nav>
+
+  <br>
+
+  <div class="container">
+  
+    <div class="row">
+
+      <!-- Member Card -->
+      <div class="col">
+        <div class="card border-primary">
+          <div class="card-header">Member Dashboard</div>
+          <div class="card-body" id="recent-member">
+            <h2 id="name-display"></h2>
+            <h4>Current Balance: $<span id="account-history">0</span></h4>
+            <br>
+            <button class="btn btn-success" type="button" data-toggle="modal" data-target="#depositModal">Deposit Money</button>
+            <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#withdrawModal">Withdraw Money</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Deposit Modal -->
+      <div class="modal fade" id="depositModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Deposit Money</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form role="form">
+                <div class="form-group">
+                  <label for="deposit-input">Deposit Ammount:</label>
+                  <input class="form-control" id="deposit-input" type="text">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary" id="deposit" data-dismiss="modal">Confirm Deposit</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Withdraw Modal -->
+      <div class="modal fade" id="withdrawModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Withdraw Money</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form role="form">
+                <div class="form-group">
+                  <label for="withdraw-input">Withdraw Ammount:</label>
+                  <input class="form-control" id="withdraw-input" type="text">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary" id="withdraw" data-dismiss="modal">Confirm Withdraw</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Account History Card -->
+      <div class="col">
+        <div class="card border-primary" id="account-card">
+          <div class="card-header">Account History</div>
+  
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col" style="color: #1a1a1a">Type</th>
+                <th scope="col" style="color: #1a1a1a">Amount</th>
+              </tr>
+            </thead>
+            <tbody id="account-table">
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script type="text/javascript" src="./js/app.js"></script>
+  <script type="text/javascript" src="./js/main.js"></script>
+
+</body>
+
+</html>
